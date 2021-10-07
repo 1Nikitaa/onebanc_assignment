@@ -47,6 +47,47 @@ fetch("https://dev.onebanc.ai/assignment.asmx/GetTransactionHistory?userId=1&rec
         var time4 = n3.slice(11, 16);
         document.getElementById("time4").innerHTML = res3 + ',' + time4 + ' ' + 'PM';
 
+    let obj= data.transactions[0];
+              console.log(obj);  
+              let row= document.createElement('tr');
+              let id=  document.getElementById("1").innerHTML = data.transactions[0].id;
+              let start_date= document.getElementById("2").innerHTML = data.transactions[0].startDate;
+              let end_date= document.getElementById("3").innerHTML = data.transactions[0].endDate;
+              let amount= document.getElementById("4").innerHTML = data.transactions[0].amount
+              let direction= document.getElementById("5").innerHTML = data.transactions[0].direction;
+              let status= document.getElementById("6").innerHTML = data.transactions[0].status;
+              let type= document.getElementById("7").innerHTML = data.transactions[0].type;
+              let description= document.getElementById("8").innerHTML = data.transactions[0].description;
+              let vpayId= document.getElementById("9").innerHTML = data.transactions[0].customer.vPayId;
+              let vpay= document.getElementById("10").innerHTML = data.transactions[0].customer.vPay;
+           
+              
+            
+              id.innerHTML=obj.id;
+              start_date.innerHTML=obj.startDate;
+              end_date.innerHTML=obj.endDate;
+              amount.innerHTML=obj.amount;
+              direction.innerHTML=obj.direction;
+              status.innerHTML=obj.status;
+              type.innerHTML=obj.type;
+              description.innerHTML=obj.description;
+              vpayId.innerHTML=obj.customer.vPayId;
+              vpay.innerHTML=obj.customer.vPay;
+              
+
+
+              row.appendChild(id)
+              row.appendChild(start_date)
+              row.appendChild(end_date)
+              row.appendChild(amount)
+              row.appendChild(direction)
+              row.appendChild(status)
+              row.appendChild(type)
+              row.appendChild(description)
+              row.appendChild(vpayId)
+              row.appendChild(vpay)
+            
+        
     });
 
 
